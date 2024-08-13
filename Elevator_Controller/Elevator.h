@@ -1,14 +1,13 @@
-#ifndef Elevator_H
-#define Elevator_H
-#pragma once
+#ifndef ELEVATOR_H
+#define ELEVATOR_H
 #include <iostream>
 #include "Button.h"
 #include "Screen.h"
 #include <set>
 
 extern set<int> in_calls;
-int direction;
-int curr_floor;
+extern int direction;
+extern int curr_floor;
 
 class Elevator
 {

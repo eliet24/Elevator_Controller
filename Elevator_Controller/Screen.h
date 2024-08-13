@@ -1,6 +1,5 @@
-#ifndef Screen_H
-#define Screen_H
-#pragma once
+#ifndef SCREEN_H
+#define SCREEN_H
 
 extern int direction;
 extern int curr_floor;

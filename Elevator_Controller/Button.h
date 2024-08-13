@@ -1,7 +1,6 @@
-#ifndef Button_H
-#define Button_H
+#ifndef BUTTON_H
+#define BUTTON_H
 #include <iostream>
-#pragma once
 using namespace std;
 
 class Button

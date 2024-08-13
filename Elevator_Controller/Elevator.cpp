@@ -5,7 +5,9 @@
 #include <thread>
 #include <chrono>
 using namespace std;
-//using namespace std::chrono;
+
+int direction = 0;
+int curr_floor = 0;
 
 Elevator::Elevator()
 {

@@ -1,6 +1,5 @@
-#ifndef Floor_H
-#define Floor_H
-#pragma once
+#ifndef FLOOR_H
+#define FLOOR_H
 #include <iostream>
 #include "Button.h"
 #include "Screen.h"

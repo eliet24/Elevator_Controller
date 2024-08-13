@@ -1,6 +1,5 @@
-#ifndef Controller_H
-#define Controller_H
-#pragma once
+#ifndef CONTROLLER_H
+#define CONTROLLER_H
 #include <iostream>
 #include <set>
 #include <vector>
