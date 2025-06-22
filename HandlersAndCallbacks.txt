@@ -1,0 +1,39 @@
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+In this file i wrote how i think the handlers and callbacks would have be written in embedded system
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+MX_GPIO_Init();
+
+void EXTI7_1_IRQHandler(void)       //Hardware Handlers for all Elevator Buttons
+{
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_1);         //same for the floor buttons for ddifferent PINS
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_3);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_4);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_5);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_6);
+  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_7);
+}
+
+void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
+{
+  /* EXTI line interrupt detected */
+  if(__HAL_GPIO_EXTI_GET_IT(GPIO_Pin) != RESET)
+  {
+    __HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin);
+    HAL_GPIO_EXTI_Callback(GPIO_Pin);
+  }
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	elevator_buttons[GPIO_Pin].pressButton();
+    in_calls.insert(GPIO_Pin);
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    out_calls.insert(GPIO_Pin);                   
+}
